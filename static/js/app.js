@@ -9,8 +9,7 @@ function buildTable(data) {
     // clear existing data
     tbody.html("");
 
-    // looping through each object in data
-    // adding append a row and cells for each value
+    // looping through each object in data adding append a row and cells for each value
     data.forEach((dataRow) => {
         // append row to table
         let row = tbody.append("tr");
@@ -25,7 +24,7 @@ function buildTable(data) {
 // Keep track of all filters
 var filters = {};
 
-// This function will replace your handleClick function
+// func to set the filters
 function updateFilters() {
 
   // Save the element, value, and id of the filter that was changed
@@ -33,11 +32,10 @@ function updateFilters() {
     var savedval = savedelem.property("value");
     var savedid = savedelem.attr('id');
 
-  // If a filter value was entered then add that filterId and value
-  // to the filters list. Otherwise, clear that filter from the filters object
+  // If a filter value was entered then add that filterId and value to the filters list.
     if (savedelem) {
         filters[savedid] = savedval;
-    
+      // If no filter value delete filter
     } else {
         delete filters[savedid];
     };
@@ -49,8 +47,7 @@ function filterTable() {
 
   // Set the filteredData to the tableData
     let filteredData = tableData;
-  // Loop through all of the filters and keep any data that
-  // matches the filter values
+  // Loop through all of the filters and keep any matches the filter values
   Object.entries(filters).forEach(([key, value]) => {
     if (value) {
       filteredData = filteredData.filter(row => row[key] === value);
@@ -61,7 +58,6 @@ function filterTable() {
 };
 
 // Attach an event to listen for changes to each filter
-// Hint: You'll need to select the event and what it is listening for within each set of parenthesis
 d3.selectAll("input").on("change", updateFilters);
 
 // Build the table when the page loads
