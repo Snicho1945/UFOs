@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UFO Sightings</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
         integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/style.css">
 </head>
+
 <body class="bg-dark">
    <div class="wrapper">
        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
@@ -37,15 +38,28 @@
        <div class="container-fluid">
            <div class="row">
                <div class="col-md-3">
-                    <form class="bg-dark">
-                        <p>Filter Search</p>
-                        <ul class="list-group bg-dark">
+                    <form class="text-center bg-dark">
+                        <h4 id="log">Filter Search</h4>
+                        <ul class="list-group bg-dark" id="listing">
                             <li class="list-group-item bg-dark">
                                 <label for="date">Enter Date</label>
                                 <input type="text" placeholder="1/10/2010" id="datetime" />
                             </li>
-                            <li class="list-group-item bg-dark text-center">
-                                <button id="filter-btn" type="button" class="btn btn-dark">Filter Table</button>
+                            <li class="list-group-item bg-dark">
+                                <label for="date">Enter City</label>
+                                <input type="text" placeholder="benton" id="city" />
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="date">Enter State</label>
+                                <input type="text" placeholder="ca" id="state" />
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="date">Enter Country</label>
+                                <input type="text" placeholder="us" id="country" />
+                            </li>
+                            <li class="list-group-item bg-dark">
+                                <label for="date">Enter Shape</label>
+                                <input type="text" placeholder="circle, light, etc" id="shape" />
                             </li>
                         </ul>
                     </form>
